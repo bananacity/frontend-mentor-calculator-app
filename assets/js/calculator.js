@@ -1,5 +1,7 @@
 let calculation = "";
 
+const display = document.getElementById("calc-display");
+
 function appendToDisplay(character) {
   calculation += character;
   updateDisplay();
@@ -17,8 +19,12 @@ function reset() {
 
 function calculate() {
   if (calculation) {
-    calculation = String(eval(calculation));
-    updateDisplay();
+    try {
+      calculation = String(eval(calculation));
+      updateDisplay();
+    } catch (error) {
+      display.value = "Error";
+    }
   }
 }
 
@@ -27,6 +33,5 @@ function formatWithCommas(str) {
 }
 
 function updateDisplay() {
-  const display = document.getElementById("calc-display");
   display.value = formatWithCommas(calculation);
 }
