@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=League+Spartan:wght@100..900&family=Outfit:wght@100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/general.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="calc-container">
+        <header class="calc-header">
+          <h1 class="text-preset-3">calc</h1>
+
+          <div class="theme-container">
+            <p class="text-preset-6 theme-text">THEME</p>
+
+            <div class="theme-toggle-container">
+              <div class="text-preset-6 theme-toggle-labels">
+                <label for="theme-dark">1</label>
+                <label for="theme-light">2</label>
+                <label for="theme-contrast">3</label>
+              </div>
+
+              <div class="theme-toggle">
+                <input
+                  type="radio"
+                  name="theme"
+                  id="theme-dark"
+                  data-theme="dark"
+                />
+                <input
+                  type="radio"
+                  name="theme"
+                  id="theme-light"
+                  data-theme="light"
+                />
+                <input
+                  type="radio"
+                  name="theme"
+                  id="theme-contrast"
+                  data-theme="contrast"
+                />
+
+                <div class="theme-handle"></div>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <input
+          type="text"
+          value=""
+          placeholder="0"
+          id="calc-display"
+          class="calc-display text-preset-1"
+          readonly
+        />
+
+        <div class="calc-keypad-container">
+          <div class="calc-keypad-grid">
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('7')"
+            >
+              7
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('8')"
+            >
+              8
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('9')"
+            >
+              9
+            </button>
+            <button
+              class="calc-btn btn-delete text-preset-4"
+              onclick="deleteChar()"
+            >
+              DEL
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('4')"
+            >
+              4
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('5')"
+            >
+              5
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('6')"
+            >
+              6
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('+')"
+            >
+              +
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('1')"
+            >
+              1
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('2')"
+            >
+              2
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('3')"
+            >
+              3
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('-')"
+            >
+              -
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('.')"
+            >
+              .
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('0')"
+            >
+              0
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('/')"
+            >
+              /
+            </button>
+            <button
+              class="calc-btn text-preset-2"
+              onclick="appendToDisplay('*')"
+            >
+              x
+            </button>
+            <button class="calc-btn btn-reset text-preset-4" onclick="reset()">
+              RESET
+            </button>
+            <button
+              class="calc-btn btn-equals text-preset-4"
+              onclick="calculate()"
+            >
+              =
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="assets/js/theme-switcher.js"></script>
+    <script src="assets/js/calculator.js"></script>
+  </body>
+</html>

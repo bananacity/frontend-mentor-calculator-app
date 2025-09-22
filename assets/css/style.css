@@ -1,0 +1,202 @@
+body {
+  background-color: var(--color-bg-tertiary);
+  display: grid;
+  place-items: center;
+  transition: all 400ms;
+}
+
+.calc-container {
+  display: grid;
+  gap: var(--spacing-300);
+  margin-top: 6.125rem;
+  width: 100%;
+  max-width: 33.75rem;
+  padding-inline: var(--spacing-300);
+}
+
+/* Header */
+.calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  color: var(--color-text-header);
+}
+
+.theme-toggle-container {
+  display: grid;
+  place-items: center;
+  gap: var(--spacing-100);
+}
+
+.theme-toggle-labels {
+  display: flex;
+  justify-content: space-between;
+  width: 3rem;
+}
+
+.theme-container {
+  display: flex;
+  align-items: end;
+  gap: var(--spacing-200);
+}
+
+.theme-text {
+  padding-bottom: var(--spacing-100);
+}
+
+.theme-toggle {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background-color: var(--color-bg-secondary);
+  border-radius: 0.8125rem;
+  height: 1.625rem;
+  width: 4.25rem;
+  overflow: hidden;
+}
+
+.theme-toggle input {
+  cursor: pointer;
+  appearance: none;
+  height: 100%;
+  z-index: 1;
+}
+
+.theme-handle {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  transition: all 300ms ease;
+}
+
+#theme-dark:checked ~ .theme-handle {
+  left: 0.5rem;
+  background-color: var(--color-red-600);
+}
+
+#theme-light:checked ~ .theme-handle {
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-orange-700);
+}
+
+#theme-contrast:checked ~ .theme-handle {
+  left: 2.75rem;
+  background-color: var(--color-cyan-500);
+}
+
+/* Display */
+.calc-display {
+  direction: rtl;
+  border: none;
+  border-radius: 0.625rem;
+  width: 100%;
+  height: 8rem;
+  padding: var(--spacing-400);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-header);
+
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+}
+
+.calc-display::placeholder {
+  color: inherit;
+}
+
+/* Keypad */
+
+.calc-keypad-container {
+  padding: var(--spacing-400);
+  border-radius: 0.625rem;
+  background-color: var(--color-bg-secondary);
+}
+
+.calc-keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-template-areas:
+    "7 8 9 delete"
+    "4 5 6 plus"
+    "1 2 3 minus"
+    "period 0 divide multiply"
+    "reset reset equals equals";
+  gap: var(--spacing-300);
+}
+
+.calc-btn {
+  cursor: pointer;
+  border: none;
+  border-radius: 0.625rem;
+  height: 4rem;
+  padding: 1rem;
+
+  font-family: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+
+  background-color: var(--color-bg-btn-tertiary);
+  color: var(--color-text-btn-tertiary);
+
+  box-shadow: inset 0 -0.25rem var(--color-shadow-btn-tertiary);
+  transition: transform 200ms ease;
+}
+
+.calc-btn:hover {
+  transform: translateY(0.05rem);
+}
+
+.calc-btn:active {
+  transform: translateY(0.25rem);
+  box-shadow: none;
+}
+
+.btn-delete {
+  background-color: var(--color-bg-btn-secondary);
+  color: var(--color-text-btn-secondary);
+  box-shadow: inset 0 -0.25rem var(--color-shadow-btn-secondary);
+}
+
+.btn-reset {
+  background-color: var(--color-bg-btn-secondary);
+  color: var(--color-text-btn-secondary);
+  box-shadow: inset 0 -0.25rem var(--color-shadow-btn-secondary);
+  grid-area: reset;
+}
+
+.btn-equals {
+  background-color: var(--color-bg-btn-primary);
+  color: var(--color-text-btn-primary);
+  box-shadow: inset 0 -0.25rem var(--color-shadow-btn-primary);
+  grid-area: equals;
+}
+
+/* Responsive design */
+@media (width <= 480px) {
+  .calc-container {
+    margin-block: 32px;
+  }
+
+  .calc-display {
+    height: 5.5rem;
+    padding: var(--spacing-300);
+  }
+
+  .calc-keypad-container {
+    padding: var(--spacing-200);
+  }
+
+  .calc-keypad-grid {
+    gap: var(--spacing-200);
+  }
+
+  .calc-btn {
+    border-radius: 0.3125rem;
+  }
+}

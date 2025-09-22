@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Colors */
+  --color-white: #fff;
+  --color-black: #000;
+
+  --color-purple-950: #17062a;
+  --color-purple-900: #1e0936;
+  --color-purple-850: #331c4d;
+  --color-purple-800: #56077c;
+  --color-purple-700: #6c34ac;
+  --color-purple-650: #8631af;
+
+  --color-navy-950: #181f33;
+  --color-navy-900: #242d44;
+  --color-navy-850: #3a4663;
+  --color-navy-750: #434a59;
+  --color-navy-700: #647198;
+  --color-navy-400: #a2b2e1;
+
+  --color-gray-900: #36362c;
+  --color-gray-300: #d2cdcd;
+  --color-gray-200: #e6e6e6;
+  --color-gray-100: #eeeeee;
+
+  --color-blue-950: #1a2327;
+  --color-blue-500: #378187;
+  --color-blue-400: #62b5bc;
+
+  --color-red-600: #d03f2f;
+  --color-red-400: #f96b5b;
+
+  --color-orange-700: #c85402;
+  --color-orange-400: #ff8a38;
+
+  --color-cyan-500: #00ded0;
+  --color-cyan-200: #93fff8;
+
+  --color-yellow-300: #ffe53d;
+
+  /* Shadows */
+  --color-dark-btn-shadow-primary: #93261a;
+  --color-dark-btn-shadow-secondary: #414e73;
+  --color-dark-btn-shadow-tertiary: #b3a497;
+
+  --color-light-btn-shadow-primary: #873901;
+  --color-light-btn-shadow-secondary: #1b6066;
+  --color-light-btn-shadow-tertiary: #a79e91;
+
+  --color-contrast-btn-shadow-primary: #6cf9f1;
+  --color-contrast-btn-shadow-secondary: #be15f4;
+  --color-contrast-btn-shadow-tertiary: #881c9e;
+
+  /* Spacing */
+  --spacing-0: 0rem;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+}
+
+/* Themes */
+:root,
+[data-selected-theme="dark"] {
+  --color-bg-primary: var(--color-navy-950);
+  --color-bg-secondary: var(--color-navy-900);
+  --color-bg-tertiary: var(--color-navy-850);
+
+  --color-text-btn-primary: var(--color-white);
+  --color-text-btn-secondary: var(--color-white);
+  --color-text-btn-tertiary: var(--color-navy-750);
+
+  --color-text-header: var(--color-white);
+
+  --color-bg-btn-primary: var(--color-red-600);
+  --color-bg-btn-secondary: var(--color-navy-700);
+  --color-bg-btn-tertiary: var(--color-gray-200);
+
+  --color-shadow-btn-primary: var(--color-dark-btn-shadow-primary);
+  --color-shadow-btn-secondary: var(--color-dark-btn-shadow-secondary);
+  --color-shadow-btn-tertiary: var(--color-dark-btn-shadow-tertiary);
+}
+
+[data-selected-theme="light"] {
+  --color-bg-primary: var(--color-gray-100);
+  --color-bg-secondary: var(--color-gray-300);
+  --color-bg-tertiary: var(--color-gray-200);
+
+  --color-text-btn-primary: var(--color-white);
+  --color-text-btn-secondary: var(--color-white);
+  --color-text-btn-tertiary: var(--color-gray-900);
+
+  --color-text-header: var(--color-gray-900);
+
+  --color-bg-btn-primary: var(--color-orange-700);
+  --color-bg-btn-secondary: var(--color-blue-500);
+  --color-bg-btn-tertiary: var(--color-gray-200);
+
+  --color-shadow-btn-primary: var(--color-light-btn-shadow-primary);
+  --color-shadow-btn-secondary: var(--color-light-btn-shadow-secondary);
+  --color-shadow-btn-tertiary: var(--color-light-btn-shadow-tertiary);
+}
+
+[data-selected-theme="contrast"] {
+  --color-bg-primary: var(--color-purple-900);
+  --color-bg-secondary: var(--color-purple-900);
+  --color-bg-tertiary: var(--color-purple-950);
+
+  --color-text-btn-primary: var(--color-blue-950);
+  --color-text-btn-secondary: var(--color-white);
+  --color-text-btn-tertiary: var(--color-yellow-300);
+
+  --color-text-header: var(--color-yellow-300);
+
+  --color-bg-btn-primary: var(--color-cyan-500);
+  --color-bg-btn-secondary: var(--color-purple-800);
+  --color-bg-btn-tertiary: var(--color-purple-850);
+
+  --color-shadow-btn-primary: var(--color-contrast-btn-shadow-primary);
+  --color-shadow-btn-secondary: var(--color-contrast-btn-shadow-secondary);
+  --color-shadow-btn-tertiary: var(--color-contrast-btn-shadow-tertiary);
+}
+
+/* Typography */
+body {
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.text-preset-1 {
+  font-size: 3.5rem;
+  letter-spacing: -1px;
+}
+
+.text-preset-2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.7px;
+}
+
+.text-preset-3 {
+  font-size: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.text-preset-4 {
+  font-size: 1.75rem;
+  letter-spacing: -0.5px;
+}
+
+.text-preset-5 {
+  font-size: 1.25rem;
+  letter-spacing: -0.3px;
+}
+
+.text-preset-6 {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+/* Responsive design */
+@media (width <= 480px) {
+  .text-preset-1 {
+    font-size: 2.5rem;
+    letter-spacing: -0.7px;
+  }
+
+  .text-preset-2 {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+
+  .text-preset-3 {
+    font-size: 2rem;
+    letter-spacing: -0.5px;
+  }
+
+  .text-preset-4 {
+    font-size: 1.25rem;
+    letter-spacing: -0.3px;
+  }
+
+  .text-preset-5 {
+    font-size: 1.25rem;
+    letter-spacing: -0.3px;
+  }
+
+  .text-preset-6 {
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+  }
+}
