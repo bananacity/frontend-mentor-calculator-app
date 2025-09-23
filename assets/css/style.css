@@ -178,9 +178,9 @@ body {
 }
 
 /* Responsive design */
-@media (width <= 480px) {
+@media (width <= 30rem) {
   .calc-container {
-    margin-block: 32px;
+    margin-block: 2rem;
   }
 
   .calc-display {

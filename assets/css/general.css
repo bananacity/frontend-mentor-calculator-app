@@ -163,8 +163,8 @@ body {
   letter-spacing: 1px;
 }
 
-/* Responsive design */
-@media (width <= 480px) {
+/* Responsive typography */
+@media (width <= 30rem) {
   .text-preset-1 {
     font-size: 2.5rem;
     letter-spacing: -0.7px;
