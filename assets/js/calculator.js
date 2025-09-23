@@ -30,11 +30,12 @@ function calculate() {
 }
 
 function formatWithCommas(str) {
-  return str.replace(/\d+(\.\d+)?/g, (match) => Number(match).toLocaleString());
+  return str.replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
 function updateDisplay() {
   display.value = formatWithCommas(calculation);
+  display.scrollLeft = display.scrollWidth;
 }
 
 // Keyboard support
