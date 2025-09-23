@@ -24,6 +24,7 @@ function calculate() {
       updateDisplay();
     } catch (error) {
       display.value = "Error";
+      calculation = "";
     }
   }
 }
@@ -35,3 +36,20 @@ function formatWithCommas(str) {
 function updateDisplay() {
   display.value = formatWithCommas(calculation);
 }
+
+// Keyboard support
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  if ("0123456789".includes(key)) {
+    appendToDisplay(key);
+  } else if ("+-*/.".includes(key)) {
+    appendToDisplay(key);
+  } else if (key === "Backspace") {
+    deleteChar();
+  } else if (key === "Enter") {
+    calculate();
+  } else if (key === "Escape") {
+    reset();
+  }
+});
