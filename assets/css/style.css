@@ -89,7 +89,6 @@ body {
 
 /* Display */
 .calc-display {
-  direction: rtl;
   border: none;
   border-radius: 0.625rem;
   width: 100%;
